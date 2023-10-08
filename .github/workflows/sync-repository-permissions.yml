@@ -1,0 +1,27 @@
+name: Sync Repository Permissions
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+      - master
+      - develop
+    types:
+      - closed
+    paths:
+      - '.paylocity/github-repository-permissions.json'
+      - '.github/workflows/sync-repository-permissions.yml'
+
+jobs:
+  sync-permissions:
+    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Sync-GitHubPermissions
+        uses: Paylocity/pctyactions-sync-githubpermissions@v30
+        with:
+          github-access-token: ${{ secrets.ORG_SYNC_GITHUB_PERMISSIONS_TOKEN }}

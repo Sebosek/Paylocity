@@ -1,0 +1,27 @@
+{
+  "read": {
+    "github-usernames": [],
+    "github-team-names": []
+  },
+  "write": {
+    "github-usernames": [],
+    "github-team-names": [
+      "TeamCityAgents",
+      "BackstageServiceAccounts"
+    ]
+  },
+  "triage": {
+    "github-usernames": [],
+    "github-team-names": []
+  },
+  "maintain": {
+    "github-usernames": [],
+    "github-team-names": []
+  },
+  "pcty-manage": {
+    "github-usernames": [
+      "kevinkemp"
+    ],
+    "github-team-names": []
+  }
+}
